@@ -13,9 +13,13 @@ app.use(cors({
 }))
 app.use(cookieParser())
 
-app.use('/', (req, res)=>{
-    res.send('server is working and api is running')
-})
+
+
+// routes
+
+import userRoutes from './routes/user.routes.js'
+
+app.use('/api/v1/user', userRoutes)
 
 
 export {app}
